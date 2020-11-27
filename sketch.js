@@ -33,13 +33,11 @@ function draw() {
   if (flowerCornered) {
     flowersAdvance();
   }
-  drops.forEach(drop => {
-    flowers.forEach(flower => drop.collision(flower));
-  });
   dropDisappear();
   drops.forEach(drop => {
     drop.show();
     drop.move();
+    flowers.forEach(flower => drop.collision(flower));
   });
 }
 
